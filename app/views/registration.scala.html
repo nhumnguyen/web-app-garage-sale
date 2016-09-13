@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/registration.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/animate.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome-4.6.3/css/font-awesome.min.css")">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/yard-sale.gif")">
+    </head>
+    <body link="rgb(255, 191, 0)" vlink="rgb(255, 191, 0)">
+        <header>
+            <div class="header-fixed">
+                <div class="nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li> <a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <h3>Create Your Personal Account</h3>
+        <div class="container animated flipInX">
+            <form method="post" action="/register">
+                <div class="firstlast">
+                    <p class="ouser">Name<br></p>
+                        <input class="inlineinput" type="text" name="firstName" placeholder="First" required="required" />
+                        <input class="inlineinput" type="text" name="lastName" placeholder="Last" required="required" />
+                </div>
+
+                <p class="ouser">Username <br></p>
+                <input class="justaname" type="text" name="username" placeholder="Username" required="required" /><br>
+                <p class="ouser">Password <br></p>
+                <input class="justaname" type="password" name="password" placeholder="Password" required="required" /><br>
+                <p class="ouser">Verify Password <br></p>
+                <input class="oo" type="password" name="vpassword" placeholder="Verify Password" required="required"/><br>
+                <input type="submit" name="submit" value="Register" class="btn">
+                <p class="signinlink">Alredy Have an account? <a href="/login">Click Here</a></p>
+            </form>
+        </div>
+    </body>
+</html>

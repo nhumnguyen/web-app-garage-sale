@@ -1,0 +1,50 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+GET     /login                      controllers.HomeController.login
+POST    /login                      controllers.HomeController.loginUser
+GET     /register                   controllers.HomeController.register
+POST    /register                   controllers.HomeController.registerUser
+GET     /success					controllers.HomeController.success
+GET		/profile					controllers.HomeController.profile
+GET     /edit                       controllers.HomeController.edit
+POST    /save                       controllers.HomeController.save
+GET     /sales                      controllers.HomeController.sales
+POST    /newSale                    controllers.HomeController.newSale
+POST    /newItem                    controllers.HomeController.newItem
+GET     /sale/:name                 controllers.HomeController.sale(name: String)
+GET     /item/:name                 controllers.HomeController.item(name: String)
+GET     /searchItem                 controllers.HomeController.searchItem(search: String)
+GET     /itemPrint                  controllers.HomeController.itemPrint
+GET     /saveItem                   controllers.HomeController.saveItem
+GET     /printCatalog               controllers.HomeController.printCatalog
+GET     /checkout                   controllers.HomeController.addToCart
+POST    /transaction                controllers.HomeController.transaction
+POST    /closeTran/:id              controllers.HomeController.closeTran(id: String)
+GET     /printReceipt/:id           controllers.HomeController.printReceipt(id: String)
+GET     /addByItemID                controllers.HomeController.addByItemID(id: Integer)
+GET     /displayUsers               controllers.HomeController.displayUsers
+GET     /unlock/:name               controllers.HomeController.unlock(name: String)
+GET     /newUserRole                controllers.HomeController.newUserRole
+GET     /setSeller                  controllers.HomeController.setSeller
+GET     /displaySales               controllers.HomeController.displaySales
+GET     /closeSale/:name            controllers.HomeController.closeSale(name: String)
+GET     /upload                     controllers.HomeController.upload(url: String)
+GET     /finanReport                controllers.HomeController.finanReport
+GET     /instockPage                controllers.HomeController.instockPage
+GET     /outOfStockPage             controllers.HomeController.outOfStockPage
+GET     /soldPage                   controllers.HomeController.soldPage
+GET     /report/:tranID             controllers.HomeController.reportEachTran(tranID: String)
+GET     /displayUnsoldItem          controllers.HomeController.displayUnsold
+GET     /setLimit                   controllers.HomeController.setLimit
+GET     /bySeller/:name             controllers.HomeController.bySeller(name: String)
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

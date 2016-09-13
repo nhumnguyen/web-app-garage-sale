@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ultimate Yard Seller</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/animate.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome-4.6.3/css/font-awesome.min.css")">
+        <link href='https://fonts.googleapis.com/css?family=Josefin+Slab:400,600' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/yard-sale.gif")">
+    </head>
+        <body>
+            <header>
+                <h1><span>Welcome</span></h1>
+                <p class="yard-sale">The Ultimate Yard Sale</p>
+                <div class="buttons" style="text-align: center;">
+                    <form method="get" action="/register">
+                        <div class="btn">
+                            <button type="submit" value="Register" name="submit">Register</button>
+                        </div>
+                    </form>
+                    <form method="get" action="/login">
+                        <div>
+                            <button type="submit" value="Login" name="submit">LOGIN</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="btn animated bounceInUp">
+                    <a href="https://www.twitter.com/" target="_blank" class="jumping-icon"><i class="fa fa-twitter fa-2x" ></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="jumping-icon"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    <a href="https://www.github.com/" target="_blank" class="jumping-icon"><i class="fa fa-github-alt fa-2x"></i></a>
+                </div>
+                <hr class="bar">
+            </header>
+    </body>
+</html>

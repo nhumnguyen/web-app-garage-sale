@@ -1,0 +1,156 @@
+@(item: models.Item, curr: models.User )
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+        <title>@item.name</title>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/item.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome-4.6.3/css/font-awesome.min.css")">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/yard-sale.gif")">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="@routes.Assets.versioned("javascripts/printbutton.js")" type="text/javascript"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <input type="hidden" id="refreshed" value="no">
+        <script type="text/javascript">
+                onload=function(){
+                    var e=document.getElementById("refreshed");
+                    if(e.value=="no")e.value="yes";
+                    else{e.value="no";location.reload();}
+                }
+        </script>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/success">Home</a></li>
+                    <li><a href="/sales">Sales</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><i class="fa fa-user fa-fw fa-lg"></i> <i class="fa fa-cog fa-spin fa-lg" aria-hidden="true"></i> <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+                        <ul>
+                            <li><a href="/profile"><i class="fa fa-pencil fa-fw"></i> Profile</a></li>
+                            <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="productimage">
+            <div class="inside">
+                <h1 class="proname"><span>@item.name</span><a class="addbutton" type="submit" name="button" data-toggle="modal" data-target="#myModalNorm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update</a></h1>
+                <a href="/itemPrint" class="printtagbtn"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print Item Tag</a>
+                <h6 class="addded">Total Price: $@item.price</h6>
+                <h6 class="addded">ID: @item.id</h6>
+            </div>
+
+            <div class="pricelistings">
+                <p class="itemname">@item.name</p>
+                <p class="itemprice"><font size="4">$@item.price</font></p>
+                @if(item.salePrice > 0.0) {
+                    <p class="itemprice"><font size="4">Now On Sale: $@item.salePrice</font></p>
+                }
+
+                <p class="itemprice"><font size="4"> Left: @item.quantity </font></p>
+                <hr class="bar" />
+                <p class="sellerinfo"><strong>Other Sellers</strong> </p>
+                <p class="sellerinfo">Amazon: $20.00</p>
+                <p class="sellerinfo">Ebay: $18.00</p>
+
+
+                <form action="/checkout" method="GET">
+                    <input class="checkoutbtn" type="submit" value="Add to Cart">
+                </form>
+            </div>
+        </div>
+
+        <div class="productinformation">
+            <div class="container">
+    			<div class="col-md-9 col-lg-9 col-xs-12">
+    				<ul class="nav nav-tabs">
+    					<li class="active"><a href="#Description" data-toggle="tab"><font size="3">Description</font></a></li>
+    					<li><a href="#Seller" data-toggle="tab"><font size="3">Seller Information</font></a></li>
+    					<li><a href="#Images" data-toggle="tab"><font size="3">Upload Image</font></a></li>
+    				</ul>
+    				<div class="tab-content">
+    					<div class="tab-pane fade in active" id="Description">
+    						<p><font size="4.5">@item.description</font></p>
+    					</div>
+    					<div class="tab-pane fade" id="Seller">
+                            <h2>Seller: @item.seller.username</h2>
+                            @if(curr.roles.contains(models.User.Role.SALEADMIN)) {
+                                <form method="get" action="/setSeller">
+                                    <div class="form-group">
+                                        <input type="text" name="username" placeholder="Seller's Username" class="form-control" required="required" id="inplen">
+                                    </div>
+                                    <input type="submit" value="Submit" class="btn">
+                                </form>
+                            }
+                            @if(curr.equals(item.seller)) {
+                              <h2>Lower Price Limit: $@item.lowerLimit</h2>
+                                <form method="get" action="/setLimit">
+                                    <div class="form-group">
+                                        <input type="text" name="lowerLimit" placeholder="$0.00" class="form-control" required="required" id="inplen">
+                                    </div>
+                                    <input type="submit" value="Submit" class="btn">
+                                </form>
+                            }
+    					</div>
+    					<div class="tab-pane fade" id="Images">
+                            @if(item.url != null) {
+                                <img src=@item.url><br>
+                            }
+                            <form method="get" action="/upload">
+                                <div class="form-group">
+                                    <input type="text" name="url" placeholder="Imgur Direct URL"><br>
+                                    <input type="submit" class="btn">
+                                </div>
+                            </form>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+        </div>
+
+        <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel"><strong>Update Information</strong></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="get" action="/saveItem">
+                            <div class="form-group">
+                                <label>Item Name</label>
+                                <input type="text" name="name" class="form-control" value="@item.name" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Item Price</label>
+                                <input type="number" name="price" class="form-control" id="textareawidthprice" value="@item.price" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>Sale Price</label>
+                                <input type="number" name="salePrice" min="0.0" class="form-control" value="0.0" id="textareawidthprice">
+                            </div>
+                            <div class="form-group">
+                                <label>Item quantity</label>
+                                <input type="number" min="1" name="quantity" class="form-control" id="textareawidthprice" value=@item.quantity required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>Item Description</label>
+                                <textarea type="text" name="description" class="form-control" id="textareawidth" required="required">@item.description</textarea>
+                            </div>
+                            <input type="submit" value="Submit" class="btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

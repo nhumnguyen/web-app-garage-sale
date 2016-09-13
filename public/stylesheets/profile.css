@@ -1,0 +1,190 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav {
+    height: 70px;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 60px;;
+    position: relative;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 19px;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    color: #0DDFF0;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+    min-width: 250px;
+    position: absolute;
+}
+
+nav ul ul li {
+    display: block;
+    background: #000000;
+    opacity: 0.85;
+    text-align: left;
+}
+
+.container {
+    margin: 120px auto auto auto;
+}
+
+.tab-content {
+    padding: 10px;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    border-width: 1px 1px 1px 1px;
+    border: 2px solid #dbdbdb;
+    border-radius: 6px;
+    min-height: 600px;
+    margin-left: 20px;
+}
+
+#settab {
+    padding: 10px;
+    overflow: hidden;
+    border: 2px solid #dbdbdb;
+    border-radius: 6px;
+    min-height: 100px;
+}
+
+.settingheader {
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.bar {
+    height: 0px;
+    width: 100%;
+    border-top: 1px solid #000;
+    margin: 0 auto 20px auto;
+}
+
+.barcostume {
+    height: 0px;
+    width: 90%;
+    border-top: 1px solid #000;
+    margin: 0 auto 15px;
+}
+
+#setop {
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.nav li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav li a:hover {
+    color: red;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+.profileheading {
+    font-size: 23px;
+    text-align: center;
+}
+
+.fa-big{
+   font-size: 100px !important;
+   margin: 10px auto 5px 330px;
+}
+
+.usernamebelowico {
+    text-align: center;
+    font-size: 24px;
+}
+
+.editbtn {
+    vertical-align: middle;
+    font-size: 18px;
+    padding: 10px 20px !important;
+    color: #fff;
+    background-color: #5ca941;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 250px auto 5px 320px;
+}
+
+.editbtn:hover {
+    color: #F9D460 !important;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+p {
+	padding: 15px;
+	font-size: 21px;
+}
+
+.tab-pane li {
+    font-size: 20px;
+    list-style: circle;
+}
+
+.tab-pane li a {
+
+    color: #000000;
+}
+
+.tab-pane li a:hover {
+    color: red;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}

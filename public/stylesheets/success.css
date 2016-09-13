@@ -1,0 +1,150 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+header {
+    height: 3px;
+}
+
+.nav {
+    height: 70px;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.85;
+}
+
+form {
+    display: inline-block;
+}
+
+.nav ul {
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 60px;;
+    position: relative;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 19px;
+}
+
+.nav ul li a:hover {
+    color: #0DDFF0;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+.nav ul li:hover ul {
+    display: block;
+}
+
+.nav ul ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+    min-width: 250px;
+    position: absolute;
+}
+
+.nav ul ul li {
+    display: block;
+    background: #000000;
+    opacity: 0.85;
+    text-align: left;
+}
+
+.header-image {
+    height: 500px;
+    width: 100%;
+    position: fixed;
+    background-image: url(../images/activities.jpg);
+}
+
+.header-heading {
+    text-align: center;
+    font-size: 77px;
+    font-weight: 1000;
+    color: azure;
+    text-transform: uppercase;
+    letter-spacing: 0.2cm;
+    clear: both;
+    margin-top: 160px;
+}
+
+.header-heading  span {
+    display: inline-block;
+    padding: 0.6cm 0.6cm;
+    border: white solid 3px;
+}
+
+.header-image p {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.05cm;
+    color: azure;
+    line-height: 0.2;
+}
+
+.nothing {
+    top: 490px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.social {
+    text-align: center;
+    font-size: 30px;
+    margin: 0px auto 0px 50px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    letter-spacing: 1.4cm;
+    color: #503E2A;
+}
+
+.icon:hover, .icon:hover, .icon:hover {
+    color: rgba(231, 76, 60, 0.7);
+    transition: ease-in all 400ms;
+    -moz-transition: ease-in all 400msms;
+    -webkit-transition: ease-in all 400msms;
+    -o-transition: ease-in all 400msms;
+}
+
+.bar {
+    height: 0px;
+    width: 400px;
+    border-top: 4px solid #000000;
+    margin: 0 auto auto 600px;
+}
+
+.text {
+    margin-top: 160px;
+    text-align: center;
+}
+
+.connect {
+    font-size: 40px;
+}

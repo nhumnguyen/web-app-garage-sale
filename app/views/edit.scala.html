@@ -1,0 +1,46 @@
+@(user: models.User)
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Edit Details</title>
+      <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/edit.css")">
+      <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/animate.css")">
+      <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome-4.6.3/css/font-awesome.min.css")">
+      <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+      <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/yard-sale.gif")">
+    </head>
+    <body>
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="/success">Home</a></li>
+                    <li><a href="/sales">Sale</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> @user.username <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Profile</a></li>
+                            <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <h2>EDIT PROFILE</h2>
+        <div class="container animated flipInX">
+            <form method="post" action="/save">
+                <div class="firstlast">
+                    <p class="ouser">Name: <br></p>
+                        <input class="inlineinput" type="text" name="firstName" value=@user.firstName />
+                        <input class="inlineinput" type="text" name="lastName" value=@user.lastName />
+                </div>
+                <input class="justaname" type="hidden" name="username" value="@user.username" required="required"/><br>
+                <p class="ouser">Password: <br></p>
+                <input class="justaname" type="password" name="password" placeholder="Password" required="required"/><br>
+                <p class="ouser">Verify Password: <br></p>
+                <input class="oo" type="password" name="vpassword" placeholder="Verify Password" required="required"/><br>
+                <button type="submit" value="Save Changes" id="save">Update Profile</button>
+            </form>
+        </div>
+    </body>
+</html>

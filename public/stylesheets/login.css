@@ -1,0 +1,122 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    margin: 0 auto;
+    background-image: url(../images/activities.jpg);
+}
+
+header {
+    height: 1px;
+}
+
+.nav {
+    height: 70px;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.85;
+}
+
+.nav ul {
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 60px;
+    position: relative;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 13px;
+}
+
+.nav ul li a:hover {
+    color: #0DDFF0;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+.container {
+    text-align: center;
+    width: 480px;
+    height: 350px;
+    margin: 0 auto;
+    background-color: rgba(231, 76, 60, 0.7);
+    border-radius: 8px;
+    padding-top: 90px;
+}
+
+input[type="text"], [type="password"]{
+    margin: 0 auto;
+    height: 40px;
+    width: 300px;
+    font-size: 16px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+.loginbtn {
+    display: inline;
+    vertical-align: middle;
+    font-size: 18px;
+    padding: 15px 40px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+    margin-left: 9px;
+    margin-bottom: 15px;
+}
+
+.cancelbtn {
+    display: inline;
+    vertical-align: middle;
+    font-size: 18px;
+    padding: 15px 40px;
+    color: #fff;
+    background-color: rgba(255, 191, 0, 0.5);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+    margin-left: 9px;
+}
+
+.loginbtn:hover, .cancelbtn:hover {
+    color: #6CC7D7;
+    background-color: #F0F6DC;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    color: azure;
+    text-transform: uppercase;
+    letter-spacing: 0.2cm;
+    margin-top: 150px;
+    clear: both;
+}

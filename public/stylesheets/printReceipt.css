@@ -1,0 +1,35 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container {
+	margin-top: 70px;
+}
+
+#printpagebtn {
+	font-size: 18px;
+    padding: 6px 15px;
+    color: #ffffff;
+    background-color: #5ca941;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none !important;
+    margin: 15px auto 0 500px;
+}
+
+#printpagebtn:hover {
+	color: #F9D460;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}

@@ -1,0 +1,104 @@
+*:focus {
+    outline: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 auto;
+}
+header {
+    background-image: url(../images/activities.jpg);
+    background-size: cover;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 90px;
+    font-weight: 700;
+    color: azure;
+    text-transform: uppercase;
+    letter-spacing: 0.2cm;
+    margin-top: 0;
+    margin-bottom: 20px;
+    clear: both;
+    padding-top: 260px;
+    font-family: 'Josefin Slab', serif;
+}
+
+h1 span {
+    display: inline-block;
+    padding: 0.6cm 0.6cm;
+    border: white solid 3px;
+}
+
+.yard-sale {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.05cm;
+    color: azure;
+    line-height: 1;
+    margin-bottom: 30px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.cointainer {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.buttons form, .buttons form div {
+    display: inline;
+}
+
+.buttons button {
+    margin-left: 15px;
+    margin-right: 15px;
+    display: inline;
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 40px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+    margin-bottom: 150px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.buttons button:hover {
+    color: #6CC7D7;
+    background-color: #F0F6DC;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+.bar {
+    height: 0px;
+    width: 270px;
+    border-top: 2px solid white;
+    margin: 0 auto 50px;
+}
+.btn {
+    text-align: center;
+    display: block;
+}
+.fa-twitter, .fa-facebook-square, .fa-github-alt {
+    color: white;
+    padding: 20px;
+}
+
+.fa-twitter:hover, .fa-facebook-square:hover, .fa-github-alt:hover {
+    color: rgba(231, 76, 60, 0.7);
+    transition: ease-in all 400ms;
+    -moz-transition: ease-in all 400msms;
+    -webkit-transition: ease-in all 400msms;
+    -o-transition: ease-in all 400msms;
+}

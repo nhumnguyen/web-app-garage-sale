@@ -1,0 +1,102 @@
+@import java.util
+@(user: models.User, users: util.Collection[models.User])
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/profile.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome-4.6.3/css/font-awesome.min.css")">
+		<link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/yard-sale.gif")">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/success">Home</a></li>
+                    <li><a href="/sales">Sales</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><i class="fa fa-user fa-fw fa-lg"></i> <i class="fa fa-cog fa-spin fa-lg" aria-hidden="true"></i> <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+                        <ul>
+                            <li><a href="/profile"><i class="fa fa-pencil fa-fw"></i> Profile</a></li>
+                            <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+		    <div class="row">
+	            <div class="tabbable">
+					<ul class="nav nav-stacked col-md-3" id="settab">
+						<li class="settingheader"><strong>Settings</strong></li>
+						<hr class="bar">
+	                    <li class="active" id="setop"><a href="#profile" data-toggle="tab">Profile</a></li>
+                        @if(user.roles.contains(User.Role.BOOKKEEPER)) {
+		                    <li id="setop"><a href="#depends" data-toggle="tab">Reports</a></li>
+                        }
+                        @if(user.roles.contains(User.Role.BOOKKEEPER)) {
+		                    <li id="setop"><a href="#depends1" data-toggle="tab">By Seller</a></li>
+                        }
+                        @if(user.roles.contains(User.Role.SUPERUSER)) {
+                            <li id="setop"><a class="profile" href="/displayUsers">User Information</a></li>
+                        }
+                        @if(user.roles.contains(User.Role.SUPERUSER)) {
+                            <li id="setop"><a class="profile" href="/displaySales"> Close-Sales</a></li>
+                        }
+                        @if(user.roles.contains(User.Role.SUPERUSER)) {
+                            <li id="setop"><a class="profile" href="/displayUnsoldItem">Unsold Item</a></li>
+                        }
+	                    <li id="setop"><a href="/">Log Out</a></li>
+	                </ul>
+
+
+	                <div class="tab-content col-md-8">
+	                    <div class="tab-pane fade in active" id="profile">
+                            <h4 class="profileheading">
+    							<strong>Profile Information</strong>
+    						</h4>
+                            <hr class="bar">
+                            <i class="fa fa-user-secret fa-big" aria-hidden="true"></i>
+                            <p class="usernamebelowico">@user.username</p>
+            				<hr class="barcostume" />
+            				<p><strong>Full Name:</strong> &nbsp;&nbsp;@user.firstName @user.lastName </p>
+            				<p><strong>Username:</strong> &nbsp;&nbsp;@user.username </p>
+                        	<form method="get" action="/edit">
+                        		<button type="submit" value="Edit" class="editbtn">Edit Profile</button>
+                    		</form>
+						</div>
+	                    <div class="tab-pane fade" id="depends">
+                            <h4 class="profileheading">
+    							<strong>Reports</strong>
+    						</h4>
+                            <hr class="bar">
+                            <ul>
+                                <li><a href="/finanReport">Financial Report</a></li>
+                                <li><a href="/instockPage">Instock Item List</a></li>
+                                <li><a href="/outOfStockPage">Out of Stock Item</a></li>
+                                <li><a href="/soldPage">Sold Item</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="depends1">
+                            <h4 class="profileheading">
+    							<strong>By Seller</strong>
+    						</h4>
+                            <hr class="bar">
+                            <ul>
+                                @for(u <- users) {
+                                    <li><a href="/bySeller/@u.username">@u.username</a></li>
+                                }
+                            </ul>
+                        </div>
+	                </div>
+		    </div>
+		</div>
+	</body>
+</html>

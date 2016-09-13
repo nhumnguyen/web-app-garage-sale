@@ -1,0 +1,49 @@
+@(user: models.User)
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/success.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/animate.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome-4.6.3/css/font-awesome.min.css")">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/yard-sale.gif")">
+    </head>
+
+    <body>
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/sales">Sales</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><i class="fa fa-user fa-fw fa-lg"></i> <i class="fa fa-cog fa-spin fa-lg" aria-hidden="true"></i> <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+                        <ul>
+                            <li><a href="/profile"><i class="fa fa-pencil fa-fw"></i> Profile</a></li>
+                            <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="header-image">
+            <h1 class="header-heading"><span>Welcome</span></h1>
+            <p class="yard-sale">The Ultimate Yard Sale</p>
+        </div>
+
+        <div class="nothing">
+            <h2 class="connect">Connect With Us</h2>
+            <div class="social">
+
+                <a href="https://www.twitter.com/" target="_blank" class="icon"><i class="fa fa-twitter fa-2x" ></i></a>
+                <a href="https://www.facebook.com/" target="_blank" class="icon"><i class="fa fa-facebook-square fa-2x"></i></a>
+                <a href="https://www.github.com/" target="_blank" class="icon"><i class="fa fa-github-alt fa-2x"></i></a>
+            </div>
+            <div class="text">
+                © 2016 Team6, All Rights Reserved.
+            </div>
+        </div>
+    </body>
+</html>

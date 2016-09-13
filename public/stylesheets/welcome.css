@@ -1,0 +1,57 @@
+p {
+
+    text-align: center;
+    /*top: 150px;*/
+    font-size: 70px;
+    color: white;
+    font-weight: bold;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+form {
+    display: inline;
+}
+
+#register, #Login {
+    width: 200px;
+    height: 50px;
+    margin-right: 10px;
+    font-size: 20px;
+    border: none;
+    background-color: antiquewhite;
+    opacity: 0.5;
+    color: dimgrey;
+}
+
+#register {
+    position: fixed;
+    top: 55%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+#Login {
+    position: fixed;
+    top: 55%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+#register:Hover, #Login:Hover {
+    border: solid 3px thistle;
+    background-color: white;
+    color: grey;
+}
+
+body {
+    background-image: url("../images/fog.jpg");
+    background-repeat: repeat-y;
+    background-position: center top;
+    align-content: center;
+
+}

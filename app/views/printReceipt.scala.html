@@ -1,0 +1,63 @@
+@(transaction: Transaction, items: List[Item], cashier: User, event: Sale)
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>Print Receipt</title>
+		<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/printReceipt.css")">
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+		<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+		<script src="@routes.Assets.versioned("javascripts/printbutton.js")" type="text/javascript"></script>
+        <link rel="stylesheet" media="print" href="@routes.Assets.versioned("stylesheets/printcatalogprint.css")">
+    </head>
+    <body>
+		<div class="container">
+			<div class="row">
+				<div >
+					<div class="panel panel-default">
+					    <div class="panel-heading">
+							<h4 class="panel-title">
+								<strong><font size="5">@event.name</font></strong><br><br>
+								<strong><font size="4">@cashier.firstName @cashier.lastName</font></strong>
+							</h4>
+						</div>
+						<div id="collapseone" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<table class="table table-striped" id="border">
+									<tr>
+						                <th class="col-md-2">Item</th>
+						                <th>Description</th>
+										<th class="col-md-1">Price</th>
+						            </tr>
+                                    @for(i <- items) {
+    									<tr>
+
+    						                <td>@i.name</td>
+    						                <td>@i.description</td>
+    										<td>$@i.price</td>
+
+    						            </tr>
+                                    }
+                                </table>
+                                <table class="table table-striped" id="border">
+									<tr>
+										<th class="col-xs-10"></th>
+						                <th class="col-xs-1">Total Price: </th>
+						                <th>$@transaction.total</th>
+						            </tr>
+								</table>
+
+								<input id="printpagebtn" class="printbtn" type="button" value="Print this page" onclick="printpage()"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+@media print {
+  @page {
+    margin: 7mm 4mm 7mm 4mm;
+  }
+
+  body {
+    margin: 0.1cm;
+  }
+
+  .maincontent {
+    border: none !important;
+  }
+
+  .pname {
+    -webkit-print-color-adjust: exact !important;
+  }
+}

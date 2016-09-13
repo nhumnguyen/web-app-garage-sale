@@ -1,0 +1,111 @@
+@(sales: List[models.Sale])
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/sales.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome-4.6.3/css/font-awesome.min.css")">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/yard-sale.gif")">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="/success">Home</a></li>
+                    <li><a href="/sales">Sales</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><i class="fa fa-user fa-fw fa-lg"></i> <i class="fa fa-cog fa-spin fa-lg" aria-hidden="true"></i> <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+                        <ul>
+                            <li><a href="/profile"><i class="fa fa-pencil fa-fw"></i> Profile</a></li>
+                            <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="container">
+			<div class="row">
+                <div class="panel-group" id="accordion">
+    				<div class="panel panel-default">
+    				    <div class="panel-heading">
+    						<h4 class="panel-title" id="heading" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseone">
+    							<strong>Events</strong>
+    						</h4>
+    					</div>
+                        <div id="collapseone" class="panel-collapse collapse in">
+        					<div class="panel-body">
+                                <div class="sec">
+                                    @for(s <- sales) {
+                                       <ul>
+                                           <li><a href="/sale/@s.name">@s.name</a></li>
+                                       </ul>
+                                    }
+                                </div>
+
+                                <input type="submit" name="button" class="btn" id="addbutton" data-toggle="modal" data-target="#myModalNorm" value="Add Events" />
+        					</div>
+    				    </div>
+                    </div>
+                    <div class="panel panel-default">
+    				    <div class="panel-heading">
+    						<h4 class="panel-title" id="heading" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapstwo">
+    							<strong>Add Items By ID</strong>
+    						</h4>
+    					</div>
+                        <div id="collapstwo" class="panel-collapse collapse">
+        					<div class="panel-body">
+                                <form method="get" action="/addByItemID">
+                                    <div class="form-group">
+                                        <label><strong><font size="4">Item ID</font></strong></label>
+                                        <input type="number" name="id" value="100" required="required" class="form-control" id="widthinp">
+                                        <input type="submit" value="Add to Cart" class="btn" id="addbutton">
+                                    </div>
+
+                                </form>
+        					</div>
+                        </div>
+    				</div>
+                </div>
+			</div>
+		</div>
+
+
+        <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel"><strong>New Event</strong></h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form role="form" method="post" action="/newSale">
+                            <div class="form-group">
+                                <label>Event Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Event Name" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Event Date</label>
+                                <input type="date" name="date" class="form-control" required="required"/>
+                            </div>
+                            <input type="submit" value="Add Event" class="btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+header {
+    height: 3px;
+}
+
+.nav {
+    height: 70px;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.85;
+}
+
+form {
+    display: inline-block;
+}
+
+.nav ul {
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 60px;;
+    position: relative;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 19px;
+}
+
+.nav ul li a:hover {
+    color: #0DDFF0;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+.nav ul li:hover ul {
+    display: block;
+}
+
+.nav ul ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+    min-width: 250px;
+    position: absolute;
+}
+
+.nav ul ul li {
+    display: block;
+    background: #000000;
+    opacity: 0.85;
+    text-align: left;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+#btnone {
+	font-size: 18px;
+    padding: 6px 15px;
+    color: #ffffff;
+    background-color: #5ca941;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none !important;
+    margin: 15px auto 20px 460px;
+}
+
+#btnone:hover, #btntwo:hover {
+	color: #F9D460;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+#btntwo {
+	font-size: 18px;
+    padding: 10px 15px;
+    color: #ffffff;
+    background-color: #5ca941;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none !important;
+    margin: 15px auto 20px 10px;
+}
+
+.checkoutbanner {
+    margin: 120px auto 0 0;
+}
+
+.checkoutheader {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.checkoutheader:before, .checkoutheader:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 37%;
+}
+
+.checkoutheader:before {
+    right: 0.1em;
+    margin-left: -10%;
+}
+
+.checkoutheader:after {
+    left: 0.1em;
+    margin-right: -10%;
+}

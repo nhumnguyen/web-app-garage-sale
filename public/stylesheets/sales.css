@@ -1,0 +1,143 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+.popup:focus {
+    outline: none;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav {
+    height: 70px;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    opacity: 0.85;
+}
+
+form {
+    display: inline-block;
+}
+
+.nav ul {
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 60px;;
+    position: relative;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 19px;
+}
+
+.nav ul li a:hover {
+    color: #0DDFF0;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+.nav ul li:hover ul {
+    display: block;
+}
+
+.nav ul ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+    min-width: 250px;
+    position: absolute;
+}
+
+.nav ul ul li {
+    display: block;
+    background: #000000;
+    opacity: 0.85;
+    text-align: left;
+}
+
+#addbutton {
+    vertical-align: middle;
+    font-size: 18px;
+    padding: 10px 20px !important;
+    color: #fff;
+    background-color: #5ca941;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 30px auto 5px 500px;
+}
+
+#addbutton:hover, .btn:hover {
+    color: #F9D460 !important;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+.btn {
+    background-color: #5ca941;
+    font-size: 19px;
+    color: #ffffff;
+    padding: 10px 25px;
+    border: #bfbfbf solid 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sec ul {
+    list-style-type: none;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-top: 6px;
+    font-size: 22px;
+    list-style-type: circle;
+}
+
+.sec ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.sec ul li a:hover {
+    color: red;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+.container {
+    margin: 140px;
+}
+
+#heading {
+    text-align: center;
+    font-size: 28px;
+}
+
+#widthinp {
+    min-width: 1135px !important;
+    overflow-x: hidden;
+}

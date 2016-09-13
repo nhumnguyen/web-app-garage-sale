@@ -1,0 +1,101 @@
+@(user: User)
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Finish Transaction</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/transaction.css")">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+		<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/font-awesome-4.6.3/css/font-awesome.min.css")">
+	</head>
+	<body>
+		<header>
+            <div class="nav">
+                <ul>
+                    <li><a href="/success">Home</a></li>
+                    <li><a href="/sales">Sale</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><i class="fa fa-user fa-fw fa-lg"></i> <i class="fa fa-cog fa-spin fa-lg" aria-hidden="true"></i> <i class="fa fa-caret-down fa-lg" aria-hidden="true"></i></a>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Profile</a></li>
+                            <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+		<div class="checkoutbanner">
+			<h5 class="checkoutheader"><span>Shopping Bag</span></h5>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="panel panel-default">
+				    <div class="panel-heading">
+						<h4 class="panel-title">
+							<strong>Complete Transaction</strong>
+						</h4>
+					</div>
+					<div id="collapseone" class="panel-collapse collapse in">
+						<div class="panel-body">
+	                        @for(t <- user.getTran()) {
+							    <table class="table table-striped">
+
+
+									<tr>
+						                <th>Transaction #: </th>
+						                <td class="col-md-2">@t.tranID</td>
+						            </tr>
+									<tr>
+						                <th>Buyer Name: </th>
+						                <td>@t.buyer</td>
+						            </tr>
+									<tr>
+						                <th>Buyer ID: </th>
+						                <td class="col-md-2">@t.buyerID</td>
+						            </tr>
+
+							    </table>
+
+								<table class="table">
+									<tr>
+						                <th>Total: </th>
+						                <th class="col-md-2">$@t.getTotal()</th>
+						            </tr>
+
+									<tr>
+										Payment Method:
+										<th>Cash: </th>
+										<th class="col-md-2">$@t.cash</th>
+									</tr>
+
+									<tr>
+										<th>Card: </th>
+										<th class="col-md-2">$@t.card</th>
+									</tr>
+
+									<tr>
+										<th>Change: </th>
+										<th class="col-md-2">$@t.getChange()</th>
+									</tr>
+								</table>
+
+
+								<form method="post" action="/closeTran/@t.tranID">
+							        <input type="submit"  value="FINISH" id="btnone">
+							    </form>
+								<a href="/printReceipt/@t.tranID" id="btntwo">Print Reciept</a>
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,157 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    background-image: url(../images/activities.jpg);
+    margin: 0 auto;
+    padding: 0px;
+}
+
+header {
+    height: 3px;
+}
+
+.nav {
+    height: 70px;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.85;
+}
+
+form {
+    display: inline-block;
+}
+
+.nav ul {
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 60px;;
+    position: relative;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 19px;
+}
+
+.nav ul li a:hover {
+    color: #0DDFF0;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
+
+.nav ul li:hover ul {
+    display: block;
+}
+
+.nav ul ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+    min-width: 250px;
+    position: absolute;
+}
+
+.nav ul ul li {
+    display: block;
+    background: #000000;
+    opacity: 0.85;
+    text-align: left;
+}
+
+.container {
+    margin: 0 auto;
+    height: 540px;
+    width: 800px;
+    background-color: rgba(231, 76, 60, 0.7);
+    border-radius: 8px;
+}
+
+.ouser {
+    font-size: 20px;
+    color: azure;
+    padding-top: 15px;
+    margin-left: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 300;
+    color: azure;
+    text-transform: uppercase;
+    letter-spacing: 0.2cm;
+    margin-top: 100px;
+    clear: both;
+}
+
+.inlineinput {
+    height: 35px;
+    width: 300px;
+    display: inline;
+    border-radius: 7px;
+    font-size: 20px;
+    margin-left: 50px;
+    padding-left: 20px;
+}
+
+.justaname {
+    height: 35px;
+    width: 680px;
+    border-radius: 7px;
+    font-size: 20px;
+    margin-left: 50px;
+    padding-left: 20px;
+}
+
+.oo {
+    height: 35px;
+    width: 680px;
+    border-radius: 7px;
+    font-size: 20px;
+    margin-left: 50px;
+    padding-left: 20px;
+    margin-bottom: 40px;
+
+}
+
+#save {
+    font-size: 20px;
+    padding: 15px 40px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+    margin-left: 300px;
+    margin-bottom: 15px;
+}
+
+#save:hover {
+    color: #6CC7D7;
+    background-color: #F0F6DC;
+    transition: ease-in all 300ms;
+    -moz-transition: ease-in all 300ms;
+    -webkit-transition: ease-in all 300ms;
+    -o-transition: ease-in all 300ms;
+}
