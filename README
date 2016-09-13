@@ -1,4 +1,9 @@
-This is your new Play application
+Implemented using Play Framework
+Collaborator: github.gatech.edu/akhanal7
+			github.gatech.edu/adill7
+			github.gatech.edu/sworasilpchai6
+			github.gatech.edu/ssrinivas32
+
 =================================
 
 This file will be packaged with your application when using `activator dist`.
